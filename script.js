@@ -32,7 +32,11 @@ async function enableCam() {
 
     try {
         const stream = await navigator.mediaDevices.getUserMedia({
-            video: { width: 1280, height: 720 }
+            video: {
+                width: 1280,
+                height: 720,
+                facingMode: { exact: "environment" } // Caméra arrière
+            }
         });
         video.srcObject = stream;
         video.addEventListener('loadeddata', startDetection);

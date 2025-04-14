@@ -1,32 +1,32 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
-    <title>Multiple object detection using pre trained model in TensorFlow.js</title>
-    <meta charset="utf-8">
-    <!-- Import the webpage's stylesheet -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Détection de Voitures Intelligente</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<h1>Multiple object detection using pre trained model in TensorFlow.js</h1>
+<div class="container">
+    <h1>Détection de Voitures et Reconnaissance de Couleurs</h1>
 
-<p>Wait for the model to load before clicking the button to enable the webcam - at which point it will become visible to use.</p>
+    <section id="demos" class="invisible">
+        <div class="cam-controls">
+            <button id="webcamButton" class="button">Activer la Webcam</button>
+            <div class="status" id="status"></div>
+        </div>
 
-<section id="demos" class="invisible">
+        <div class="cam-view">
+            <video id="webcam" autoplay muted></video>
+            <div id="liveView" class="live-view"></div>
+        </div>
 
-    <p>Hold some objects up close to your webcam to get a real-time classification! When ready click "enable webcam" below and accept access to the webcam when the browser asks (check the top left of your window)</p>
+        <div id="results" class="results"></div>
+    </section>
+</div>
 
-    <div id="liveView" class="camView">
-        <button id="webcamButton">Enable Webcam</button>
-        <video id="webcam" autoplay muted width="640" height="480"></video>
-    </div>
-</section>
-
-<!-- Import TensorFlow.js library -->
-<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs/dist/tf.min.js" type="text/javascript"></script>
-<!-- Load the coco-ssd model to use to recognize things in images -->
+<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
 <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/coco-ssd"></script>
-
-<!-- Import the page's JavaScript to do some stuff -->
-<script src="script.js" defer></script>
+<script src="script.js"></script>
 </body>
 </html>
